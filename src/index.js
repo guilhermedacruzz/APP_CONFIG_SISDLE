@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, ImageBackground, Text, StyleSheet, StatusBar, ScrollView} from 'react-native';
+import { View, ImageBackground, ScrollView} from 'react-native';
 
 import Title from './components/Title';
 import SubTitle from './components/SubTitle';
@@ -7,6 +7,7 @@ import Attention from './components/Attention';
 import TextField from './components/TextField';
 import Pressable from './components/Pressable';
 import Logo from './components/Logo';
+import BarColor from './components/BarColor';
 
 export default function App() {
 
@@ -14,6 +15,8 @@ export default function App() {
         <View>
 
             <Logo/>
+
+            <BarColor/>
 
             <Title ontext="Hello"/>
             <SubTitle ontext='Faça nada'/>
