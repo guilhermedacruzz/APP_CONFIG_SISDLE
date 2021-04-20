@@ -6,11 +6,15 @@ import SubTitle from './components/SubTitle';
 import Attention from './components/Attention';
 import TextField from './components/TextField';
 import Pressable from './components/Pressable';
+import Logo from './components/Logo';
 
 export default function App() {
 
     return (
         <View>
+
+            <Logo/>
+
             <Title ontext="Hello"/>
             <SubTitle ontext='Faça nada'/>
             <Attention ontext='Não feche'/>

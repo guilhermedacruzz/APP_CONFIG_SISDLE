@@ -36,7 +36,7 @@ const general = {
     textAlignVertical: 'top'
   },
 
-  sectionButton: {
+  sectionButton: { 
       borderRadius: 8,
       padding: 6,
       height: 50,
@@ -54,6 +54,12 @@ const general = {
       color: 'white',
   },
 
+  logo: {
+    height: metrics.screenHeight * 0.11,
+    width: metrics.screenWidth * 0.9,
+    marginVertical: metrics.screenHeight * 0.05,
+    alignSelf: 'center',
+  },
 };
 
 export default general;
