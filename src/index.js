@@ -4,7 +4,8 @@ import { View, ImageBackground, Text, StyleSheet, StatusBar, ScrollView} from 'r
 import Title from './components/Title';
 import SubTitle from './components/SubTitle';
 import Attention from './components/Attention';
- 
+import TextField from './components/TextField';
+
 export default function App() {
 
     return (
@@ -12,6 +13,11 @@ export default function App() {
             <Title ontext="Hello"/>
             <SubTitle ontext='Faça nada'/>
             <Attention ontext='Não feche'/>
+
+            <TextField
+                title={"Digite um título para a lixeira:"}
+                placeholder={"Título"}
+            />
         </View>
     );
 }

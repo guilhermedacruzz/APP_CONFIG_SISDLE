@@ -7,13 +7,13 @@ const general = {
       color: colors.secondary,
       fontWeight: 'bold',
       fontSize: fonts.regular,
+      alignSelf: 'center',
       marginBottom: metrics.baseMargin
   },
 
   sectionInstructions: {
       color: colors.primary,
       fontSize: fonts.regular,
-      alignSelf: 'center',
       marginBottom: metrics.baseMargin
   },
 
@@ -24,6 +24,16 @@ const general = {
     alignSelf: 'center',
     marginBottom: metrics.doubleBaseMargin,
   },
+
+  textinput:{
+    backgroundColor: colors.secondary,
+    width:'100%',
+    paddingLeft:6,
+    color: colors.primary,
+    elevation:5,
+    borderRadius: metrics.baseRadius,
+    textAlignVertical: 'top'
+  }
 };
 
 export default general;
