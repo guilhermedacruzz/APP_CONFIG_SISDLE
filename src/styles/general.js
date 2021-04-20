@@ -3,35 +3,27 @@ import colors from './colors';
 import fonts from './fonts';
 
 const general = {
-  attention: {
+  sectionAttention: {
+      color: colors.secondary,
       fontWeight: 'bold',
-      marginTop: '2%',
+      fontSize: fonts.regular,
+      marginBottom: metrics.baseMargin
   },
 
-  instructions: {
-      color: '#DDD',
-      fontSize: 14,
-      marginTop: '2%',
-      textAlign: 'center',
+  sectionInstructions: {
+      color: colors.primary,
+      fontSize: fonts.regular,
+      alignSelf: 'center',
+      marginBottom: metrics.baseMargin
   },
 
   sectionTitle: {
-    color: colors.text,
+    color: colors.header,
     fontWeight: 'bold',
-    fontSize: fonts.regular,
+    fontSize: fonts.giant,
     alignSelf: 'center',
     marginBottom: metrics.doubleBaseMargin,
   },
-
-  textinput:{
-      backgroundColor:'#800080',
-      width:'100%',
-      paddingLeft:6,
-      color: '#f00',
-      elevation:5,
-      borderRadius: 2,
-      textAlignVertical: 'top'
-  }
 };
 
 export default general;
