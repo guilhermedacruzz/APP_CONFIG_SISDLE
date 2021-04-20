@@ -17,7 +17,7 @@ export default function(props) {
                 placeholderTextColor = {colors.secondary}
                 selectionColor={colors.primary}
                 underlineColorAndroid={colors.primary}
-                style={Styles.textinput}
+                style={Styles.sectionTextField}
             />
         </View>
       );

@@ -5,6 +5,7 @@ import Title from './components/Title';
 import SubTitle from './components/SubTitle';
 import Attention from './components/Attention';
 import TextField from './components/TextField';
+import Pressable from './components/Pressable';
 
 export default function App() {
 
@@ -18,6 +19,8 @@ export default function App() {
                 title={"Digite um título para a lixeira:"}
                 placeholder={"Título"}
             />
+
+            <Pressable/>
         </View>
     );
 }
