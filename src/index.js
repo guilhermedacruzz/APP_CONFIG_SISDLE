@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
-import { View, ImageBackground, ScrollView, StyleSheet} from 'react-native';
+import { View, ImageBackground, ScrollView, StyleSheet, Text} from 'react-native';
 
-import Title from './components/Title';
-import SubTitle from './components/SubTitle';
-import Attention from './components/Attention';
 import TextField from './components/TextField';
 import Pressable from './components/Pressable';
 import Logo from './components/Logo';
@@ -29,9 +26,9 @@ export default function App() {
             <BarColor/>
 
             <ScrollView style={styles.mind}>
-                <Title ontext="Hello"/>
-                <SubTitle ontext='Faça nada'/>
-                <Attention ontext='Não feche'/>
+                <Text style={styles.sectionTitle}>Bem Vindo ao APP de configuração ;)</Text>
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Aqui você configurara a lixeira!</Text>
+                <Text style={styles.sectionAttention}>Cuidado ao Digitar as Informações</Text>
 
                 <TextField
                     title={"Digite um título para a lixeira:"}
@@ -81,7 +78,10 @@ export default function App() {
                 />
 
                 <Pressable/>
-                
+
+                <Text style={styles.sectionAttention}>Latitude: -23.665425</Text>
+                <Text style={styles.sectionAttention}>Longitude: -48.213525</Text>
+
             </ScrollView>
 
         </ImageBackground>
