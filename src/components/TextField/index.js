@@ -14,7 +14,7 @@ export default function(props) {
                 {...props}
                 editable
                 placeholder={props.placeholder}
-                placeholderTextColor = {colors.secondary}
+                placeholderTextColor = {colors.background}
                 selectionColor={colors.primary}
                 underlineColorAndroid={colors.primary}
                 style={Styles.sectionTextField}

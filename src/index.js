@@ -15,10 +15,8 @@ const styles = StyleSheet.create({
 export default function App() {
 
     return (
-        <ImageBackground
+        <View
             style={styles.container}
-            source={require('./assets/images/back.jpg')}
-            resizeMode='cover'
         >
 
             <Logo/>
@@ -79,11 +77,11 @@ export default function App() {
 
                 <Pressable/>
 
-                <Text style={styles.sectionAttention}>Latitude: -23.665425</Text>
-                <Text style={styles.sectionAttention}>Longitude: -48.213525</Text>
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: -23.665425</Text>
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Longitude: -48.213525</Text>
 
             </ScrollView>
 
-        </ImageBackground>
+        </View>
     );
 }

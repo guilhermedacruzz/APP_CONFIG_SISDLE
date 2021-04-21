@@ -9,10 +9,10 @@ const general = {
     flex:1,
     paddingHorizontal: metrics.doubleBaseMargin,
     paddingVertical: metrics.smallMargin,
+    backgroundColor: colors.background,
   },
 
   mind:{
-      backgroundColor: colors.background,
       flex:1,
       padding: metrics.smallMargin,
       borderRadius: metrics.doubleBaseRadius,
@@ -24,7 +24,7 @@ const general = {
       fontWeight: 'bold',
       fontSize: fonts.regular,
       alignSelf: 'center',
-      marginBottom: metrics.baseMargin
+      marginBottom: metrics.doubleBaseMargin
   },
 
   sectionInstructions: {
@@ -45,7 +45,7 @@ const general = {
     backgroundColor: colors.secondary,
     width:'100%',
     paddingLeft:6,
-    color: colors.primary,
+    color: colors.background,
     elevation:5,
     borderRadius: metrics.baseRadius,
     marginBottom: metrics.doubleBaseMargin,
