@@ -3,6 +3,22 @@ import colors from './colors';
 import fonts from './fonts';
 
 const general = {
+
+  container:{
+    alignItems:'center',
+    flex:1,
+    paddingHorizontal: metrics.doubleBaseMargin,
+    paddingVertical: metrics.smallMargin,
+  },
+
+  mind:{
+      backgroundColor: colors.background,
+      flex:1,
+      padding: metrics.smallMargin,
+      borderRadius: metrics.doubleBaseRadius,
+      width: '100%'
+  },
+
   sectionAttention: {
       color: colors.secondary,
       fontWeight: 'bold',
@@ -50,8 +66,8 @@ const general = {
 
   sectionButtonText: {
       fontSize: 16,
-      margin:metrics.smallMargin,
-      color: 'white',
+      margin: metrics.smallMargin,
+      color: colors.background,
   },
 
   logo: {
