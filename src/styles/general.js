@@ -7,7 +7,7 @@ const general = {
   container:{
     alignItems:'center',
     flex:1,
-    paddingHorizontal: metrics.doubleBaseMargin,
+    paddingHorizontal: metrics.baseMargin,
     paddingVertical: metrics.smallMargin,
     backgroundColor: colors.background,
   },
