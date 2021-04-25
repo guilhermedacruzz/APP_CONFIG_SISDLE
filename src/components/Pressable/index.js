@@ -12,7 +12,7 @@ export default function(props) {
                 {...props}
                 style={({pressed}) => [
                     {
-                      backgroundColor: pressed ? colors.primary : colors.secondary,
+                      backgroundColor: pressed ? colors.secondary : colors.header,
                     },
                     styles.sectionButton
                 ]}
