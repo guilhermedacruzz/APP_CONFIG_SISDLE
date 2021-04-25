@@ -5,10 +5,9 @@ import TextField from './components/TextField';
 import Pressable from './components/Pressable';
 import Logo from './components/Logo';
 import BarColor from './components/BarColor';
+import Spinner from './components/Spinner';
 
 import { general } from './styles';
-
-import { teste } from './utils';
 
 const styles = StyleSheet.create({
     ...general,
@@ -97,7 +96,27 @@ export default function App() {
                         longitude: lon,
                     })}}
 
-                    onC={() => setHasPressable("Desativado")}
+                    stateButton={(status) => setHasPressable(status)}
+                />
+
+                <Spinner
+                    hasPressable={hasPressable}
+
+                    getData={() => {
+                        var dict = {
+                            'title': title,
+                            'description':description,
+                            'distanceBottom':distanceBottom,
+                            'distanceCover': distanceCover,
+                            'ssid':ssid,
+                            'password':password,
+                            'latitude':userPosition.latitude,
+                            'longitude':userPosition.longitude
+                        }
+                        return dict;
+                    }}
+
+                    clearButton={() => setHasPressable("Ocioso")}
                 />
 
                 <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: {userPosition.latitude}</Text>

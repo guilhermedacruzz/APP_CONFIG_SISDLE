@@ -17,7 +17,8 @@ export default function(props) {
                 await getCurrentGPS(props);
             }
 
-            props.onC();
+            props.stateButton("Desativado");
+            
         };
 
         if(props.hasPressable == "Pressionado")
