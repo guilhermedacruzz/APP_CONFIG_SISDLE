@@ -16,9 +16,6 @@ export default function(props) {
             if(permission){
                 await getCurrentGPS(props);
             }
-
-            props.stateButton("Desativado");
-            
         };
 
         if(props.hasPressable == "Pressionado")

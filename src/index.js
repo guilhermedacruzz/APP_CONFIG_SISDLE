@@ -90,35 +90,45 @@ export default function App() {
                     onPress={() => hasPressable=="Ocioso" ? setHasPressable("Pressionado"):null}
 
                     hasPressable={hasPressable}
-                    
-                    onGPS={(lat, lon) => {setUserPosition({
-                        latitude: lat,
-                        longitude: lon,
-                    })}}
 
-                    stateButton={(status) => setHasPressable(status)}
+                    onGPS={(lat, lon) => {
+                        setUserPosition({
+                            latitude:lat,
+                            longitude:lon
+                        })
+
+                        setHasPressable("Desativado");
+                    }}
+
                 />
 
                 <Spinner
                     hasPressable={hasPressable}
 
-                    getData={() => {
-                        var dict = {
+                    data={{
                             'title': title,
                             'description':description,
                             'distanceBottom':distanceBottom,
                             'distanceCover': distanceCover,
                             'ssid':ssid,
                             'password':password,
-                            'latitude':userPosition.latitude,
-                            'longitude':userPosition.longitude
-                        }
-                        return dict;
+                            'latitude':userPosition.latitude + "",
+                            'longitude':userPosition.longitude + "",
                     }}
 
                     clearButton={() => setHasPressable("Ocioso")}
+                    clearData={() => {
+                        setTitle("");
+                        setDescription("");
+                        setDistanceBottom("");
+                        setDistanceCover("");
+                        setSsid("");
+                        setPassword("");
+                        setUserPosition(false);
+                    }}
                 />
 
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Pressable: {hasPressable}</Text>
                 <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: {userPosition.latitude}</Text>
                 <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Longitude: {userPosition.longitude}</Text>
 
