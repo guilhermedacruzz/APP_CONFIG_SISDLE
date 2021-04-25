@@ -87,17 +87,26 @@ export default function App() {
                     onChangeText={text => setPassword(text)}
                 />
 
-                <Pressable onPress={() => {
-                    console.log(title);
-                    console.log(description);
-                    console.log(distanceBottom);
-                    console.log(distanceCover);
-                    console.log(ssid);
-                    console.log(password);
-                }}/>
+                <Pressable 
+                    onPress={() => hasPressable=="Ocioso" ? setHasPressable("Pressionado"):null}
 
-                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: -23.665425</Text>
-                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Longitude: -48.213525</Text>
+                    onGPS={(lat, lon) => {setUserPosition({
+                        latitude: lat,
+                        longitude: lon,
+                    })}}
+
+                    ssid={ssid}
+                    password={password}
+                    title={title}
+                    description={description}
+                    distanceBottom={distanceBottom}
+                    distanceCover={distanceCover}
+                    
+                    hasPressable={hasPressable}
+                />
+
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: {userPosition.latitude}</Text>
+                <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Longitude: {userPosition.longitude}</Text>
 
             </ScrollView>
 
