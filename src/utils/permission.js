@@ -7,7 +7,6 @@ export async function verifyLocationPermission() {
         );
         if (granted === PermissionsAndroid.RESULTS.GRANTED) {
             console.log('permissão concedida');
-            return true;
         } else {
             console.error('permissão negada');
             return false;

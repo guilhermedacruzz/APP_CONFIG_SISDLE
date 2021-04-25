@@ -22,8 +22,8 @@ export default function App() {
     const [distanceCover, setDistanceCover] = useState('5');
     const [ssid, setSsid] = useState('2.4g Adalberto');
     const [password, setPassword] = useState('qi2001to500');
-    const [userPosition, setUserPosition] = useState(false);
     const [hasPressable, setHasPressable] = useState('Ocioso');
+    const [userPosition, setUserPosition] = useState(false);
 
     return (
         <View style={styles.container} >
@@ -90,19 +90,14 @@ export default function App() {
                 <Pressable 
                     onPress={() => hasPressable=="Ocioso" ? setHasPressable("Pressionado"):null}
 
+                    hasPressable={hasPressable}
+                    
                     onGPS={(lat, lon) => {setUserPosition({
                         latitude: lat,
                         longitude: lon,
                     })}}
 
-                    ssid={ssid}
-                    password={password}
-                    title={title}
-                    description={description}
-                    distanceBottom={distanceBottom}
-                    distanceCover={distanceCover}
-                    
-                    hasPressable={hasPressable}
+                    onC={() => setHasPressable("Desativado")}
                 />
 
                 <Text style={[styles.sectionAttention, styles.sectionInstructions]}>Latitude: {userPosition.latitude}</Text>

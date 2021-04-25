@@ -1,3 +1,4 @@
-import teste from './teste';
+import permission from './permission';
+import gps from './gps';
 
-export { teste };
+export { permission, gps };
