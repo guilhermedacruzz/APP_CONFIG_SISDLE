@@ -11,7 +11,7 @@ export async function getCurrentGPS (props) {
         error => {
             props.callbackErrorGPS();
             console.log(error);
-            blinkAlert("Erro", "Não foi possível recuperar os dados do WiFi!", props.clearData());
+            blinkAlert("Erro", "Não foi possível pegar a localização!", props.clearData());
         }
     );
 

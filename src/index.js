@@ -117,7 +117,7 @@ export default function App() {
                     hasPressable={hasPressable}
 
                     data={{
-                            'title': title,
+                            'local': title,
                             'description':description,
                             'distanceBottom':distanceBottom,
                             'distanceCover': distanceCover,

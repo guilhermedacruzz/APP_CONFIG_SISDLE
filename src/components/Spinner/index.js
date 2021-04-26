@@ -4,8 +4,13 @@ import { View } from 'react-native';
 import { connectWithWifi } from '../../utils/wifi';
 import { sendInfo } from '../../utils/httppost';
 import { blinkAlert } from '../../utils/alert';
+import { wait } from '../../utils/await';
 
 import Spinner from 'react-native-loading-spinner-overlay';
+
+
+const assid = "Teste12345";
+const apassword = "12345678";
 
 export default function(props) {
 
@@ -23,14 +28,23 @@ export default function(props) {
             if(!status) {
                 blinkAlert("Erro", "Verificar se o nome ou a senha da rede estão corretos!", props.clearData());
             } else {
-                setLoadingText("Enviando as configurações...");
-                status = await sendInfo("http://jsonplaceholder.typicode.com/posts", props.data);
+                setLoadingText("Conectando com a placa...");
+                let status = await connectWithWifi(assid, apassword);
 
                 if(!status) {
-                    blinkAlert("Erro", "Não foi possível enviar as informações!", () => props.clearData());
+                    blinkAlert("Erro", "Não foi possível se conectar com a placa!", props.clearData());
                 }
                 else {
-                    blinkAlert("Tudo Ok!", "Todas as informações foram cadastradas com sucesso!", () => props.clearData());
+                    wait(2000);
+                    setLoadingText("Enviando as configurações...");
+                    status = await sendInfo('http://192.168.4.1/hello?', props.data);
+
+                    if(!status) {
+                        blinkAlert("Erro", "Não foi possível enviar as informações!", () => props.clearData());
+                    }
+                    else {
+                        blinkAlert("Tudo Ok!", "Todas as informações foram cadastradas com sucesso!", () => props.clearData());
+                    }
                 }
             }
 

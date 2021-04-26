@@ -1,6 +1,11 @@
 import WifiManager from "react-native-wifi-reborn";
+import { wait } from './await';
 
 export async function connectWithWifi (ssid, password) {
+
+    await wait(1000);
+    await WifiManager.disconnect();
+    await wait(1000);
 
     try {
         const data = await WifiManager.connectToProtectedSSID(
