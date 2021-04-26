@@ -3,6 +3,7 @@ import {View, Text, Pressable} from 'react-native';
 
 import {verifyLocationPermission} from '../../utils/permission';
 import {getCurrentGPS} from '../../utils/gps';
+import { blinkAlert } from '../../utils/alert';
 
 import styles from './styles';
 import colors from '../../styles/colors';
@@ -15,6 +16,8 @@ export default function(props) {
             
             if(permission){
                 await getCurrentGPS(props);
+            } else {
+                blinkAlert("Erro", "Permissão de acesso ao GPS negada!", props.clearData());
             }
         };
 

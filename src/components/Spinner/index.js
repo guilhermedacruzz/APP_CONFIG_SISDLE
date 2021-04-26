@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import { View, Alert } from 'react-native';
+import { View } from 'react-native';
 
 import { connectWithWifi } from '../../utils/wifi';
 import { sendInfo } from '../../utils/httppost';
+import { blinkAlert } from '../../utils/alert';
 
 import Spinner from 'react-native-loading-spinner-overlay';
 
@@ -17,19 +18,27 @@ export default function(props) {
             setLoadingText("Verificando os dados do WiFi...");
             setHasLoading(true);
 
-            let a = await connectWithWifi(props.data["ssid"], props.data["password"]);
-            console.log(a);
+            let status = await connectWithWifi(props.data["ssid"], props.data["password"]);
+        
+            if(!status) {
+                blinkAlert("Erro", "Verificar se o nome ou a senha da rede estão corretos!", props.clearData());
+            } else {
+                setLoadingText("Enviando as configurações...");
+                status = await sendInfo("http://jsonplaceholder.typicode.com/posts", props.data);
 
-            setLoadingText("Enviando as configurações...");
-            let b = await sendInfo("http://jsonplaceholder.typicode.com/posts", props.data);
-            console.log(b);
-            
+                if(!status) {
+                    blinkAlert("Erro", "Não foi possível enviar as informações!", () => props.clearData());
+                }
+                else {
+                    blinkAlert("Tudo Ok!", "Todas as informações foram cadastradas com sucesso!", () => props.clearData());
+                }
+            }
+
             setHasLoading(false);
             setTimeout(() => {
             }, 100);
 
             props.clearButton();
-            props.clearData();
         };
 
         if(props.hasPressable == 'Desativado')

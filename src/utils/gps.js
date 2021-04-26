@@ -1,13 +1,17 @@
 import Geolocation from 'react-native-geolocation-service';
 
+import { blinkAlert } from './alert';
+
 export async function getCurrentGPS (props) {
 
     Geolocation.getCurrentPosition(
         position => {
-            props.onGPS(position.coords.latitude, position.coords.longitude);
+            props.callbackSuccessGPS(position.coords.latitude, position.coords.longitude);
         },
         error => {
-            console.log(error.code, error.message);
+            props.callbackErrorGPS();
+            console.log(error);
+            blinkAlert("Erro", "Não foi possível recuperar os dados do WiFi!", props.clearData());
         }
     );
 

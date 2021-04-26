@@ -91,7 +91,7 @@ export default function App() {
 
                     hasPressable={hasPressable}
 
-                    onGPS={(lat, lon) => {
+                    callbackSuccessGPS={(lat, lon) => {
                         setUserPosition({
                             latitude:lat,
                             longitude:lon
@@ -100,6 +100,17 @@ export default function App() {
                         setHasPressable("Desativado");
                     }}
 
+                    callbackErrorGPS={() => setHasPressable("Ocioso")}
+
+                    clearData={() => {
+                        setTitle("");
+                        setDescription("");
+                        setDistanceBottom("");
+                        setDistanceCover("");
+                        setSsid("");
+                        setPassword("");
+                        setUserPosition(false);
+                    }}
                 />
 
                 <Spinner
